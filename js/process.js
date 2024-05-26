@@ -201,3 +201,5 @@ function changeStats(){
     }
     document.getElementById("san-value").innerText += san_value + " (" + san + ")";
 }
+
+
