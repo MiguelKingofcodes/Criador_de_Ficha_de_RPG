@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Características do Personagem</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Link css -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="container-fluid mt-3">
+        <div class="form-control" id="photo-container">
+            <input class="form-control" type="link" id="photo-input" class="photo-btn" placeholder="Link para foto do personagem">
+            <input class="form-control btn btn-primary mt-3" type="button" value="Salvar Imagem" onclick="save_image()">
+        </div>
+        <div class="details mt-3">
+            <h2 class="title">Detalhes do Personagem</h2>
+            <textarea class="container" type="text" placeholder="Nome" id="p_name"></textarea>
+            <textarea class="container" type="text" placeholder="Idade" id="p_years"></textarea>
+            <textarea class="container" type="text" placeholder="Ocupação" id="p_ocupation"></textarea>
+            <textarea class="container" type="text" placeholder="Estilo de Luta" id="p_fightstyle"></textarea>
+        </div>
+    </div>
+
+    <div class="container-fluid mb-5 mt-5">
+        <h2 class="text-start">Atributos base: </h2>
+        <ul id="base-attributes" class="text-start" style="list-style: none;">
+            <!--
+                ? Adicionar Barra de Vida e Sanidade...
+            -->
+            <li>
+                <h2 class="text-start">
+                    HP: 
+                        <span id="hp-value">//////////// (12)</span>
+                </h2>
+            </li>
+
+            <li>
+                <h2 class="text-start">
+                    San: 
+                        <span id="san-value">////////// (10)</span>
+                </h2>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid" id="attribute-box">
+        
+        <div id="form-group" class="border-top border-5 border-bottom border-5">
+            <h2 class="text-center">Atributos</h2> 
+            <div class="container-fluid">
+                <h3>Pontos: (<span id="attrPoints">10</span>)</h3>
+            </div>
+
+            <div class="container-fluid">
+
+                <label class="" id="for-label" for="for-input">Força (<strong>For</strong>):</label>
+
+                <div class="form-control">
+                    
+                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('for-input'))" ondblclick="upStats(document.getElementById('for-input'))">
+                    <input class="form-control input-lg" type="number" id="for-input" value="0" min="0" max="10">
+                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('for-input'))" ondblclick="downStats(document.getElementById('for-input'))">
+
+                </div>
+
+            </div>
+
+            <div class="container-fluid  mt-2">
+                <label id="vig-label" for="vig-input">Vigor (<strong>Vig</strong>):</label>
+
+                <div class="form-control">
+                    
+                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('vig-input'))" ondblclick="upStats(document.getElementById('vig-input'))">
+                    <input class="form-control input-lg" type="number" id="vig-input" value="0" min="0" max="10">
+                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('vig-input'))" ondblclick="downStats(document.getElementById('vig-input'))">
+
+                </div>
+
+            </div>
+
+            <div class="container-fluid mt-2">
+                <label id="int-label" for="int-input">Inteligência (<strong>Int</strong>):</label>
+
+                <div class="form-control">
+                    
+                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('int-input'))" ondblclick="upStats(document.getElementById('int-input'))">
+                    <input class="form-control input-lg" type="number" id="int-input" value="0" min="0" max="10">
+                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('int-input'))" ondblclick="downStats(document.getElementById('int-input'))">
+
+                </div>
+
+            </div>
+
+            <div class="attribute container-fluid">
+                <label id="car-label" for="car-input">Carisma (<strong>Car</strong>):</label>
+                
+                <div class="form-control">
+                    
+                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('car-input'))" ondblclick="upStats(document.getElementById('car-input'))">
+                    <input class="form-control input-lg" type="number" id="car-input" value="0" min="0" max="10" >
+                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('car-input'))" ondblclick="downStats(document.getElementById('car-input'))">
+
+                </div>
+                
+            </div>
+
+            <!--
+                ? Estilizando caixa de atributos
+            -->
+
+            <div class="container-fluid mt-3">
+                <div class="form-control" style="display: flex; flex-direction: column;">
+                    <label class="" for="color-input">Cor da caixa:</label>
+                    <input class="form-control input-lg" type="color" id="color-input-background" value="0" oninput="changeBoxBackground()">
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="form-control mb-5" style="display: flex; flex-direction: column;">
+                    <label class="" for="color-input">Cor da fonte:</label>
+                    <input class="form-control input-lg h-5" type="color" id="color-input-font" value="0" oninput="changeFontBackground()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inventário do personagem -->
+    <div class="container-fluid">
+        <h2>Inventário</h2>
+        <textarea class="form-control" id="bag_input" placeholder="Digite o inventário do personagem..."></textarea>
+    </div>
+
+    <!-- História do personagem -->
+    <div class="container-fluid">
+        <h2>História</h2>
+        <textarea class="form-control" id="history_input" placeholder="Digite a história do personagem..."></textarea>
+    </div>
+
+
+
+    <!--
+        ! Inputs de cores da ficha...
+
+    -->
+    <div class="container-fluid">
+        <h2>Cor de Fundo: </h2>
+        <input class="form-control" oninput='changeBackgroundColor()' type='color' id="backgroundInput">
+    </div>
+
+    <div class="container-fluid">
+        <h2>Cor de Fonte: </h2>
+        <input class="form-control" oninput='changeFontColor()' type='color' id="fontInput">
+    </div>
+
+    <!-- Botão de Salvar -->
+    <div class="container-fluid p-1">
+        <button class="container-fluid form-control btn btn-primary" id="download_button">
+            <h1 style="font-size: 1.5em;">
+    
+                Salvar
+    
+            </h1>
+        </button>
+    </div>
+
+    <!-- Script tag -->
+</body>
+<script src="js/process.js"></script>
+
+</html>
