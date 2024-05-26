@@ -73,7 +73,8 @@ function save_ficha(){
     '<style>'+
     'body{'+
     'background-color:' + document.body.style.backgroundColor + ';'+
-    'color: ' + document.body.style.color + ';' + 
+    'color: ' + document.body.style.color + ';' +
+    'font-size: 3em;'+
     '}'+
     '#attribute_box{'+
     'background-color:' + document.getElementById("attribute-box").style.backgroundColor + ';'+
@@ -89,7 +90,7 @@ function save_ficha(){
             '<textarea style="background-color: '+ document.body.style.backgroundColor + '; color: ' + document.body.style.color + '; opacity: 3;" class="container-fluid">Ocupação: '+ p_ocupation + '</textarea>' +
             '<textarea style="background-color: '+ document.body.style.backgroundColor + '; color: ' + document.body.style.color + '; opacity: 3;" class="container-fluid">Estilo de luta: '+ p_fightstyle + '</textarea>' +
         '</div>'+
-        '<div style="font-size:1.5em; " class="container-fluid" id="attribute_box">'+
+        '<div style="font-size:1em;" class="container-fluid" id="attribute_box">'+
             '<h1> Atributos:  </h1>'+
             '<p>HP: ' + document.getElementById("hp-value").innerText + '</p>' + 
             '<p>San: ' + document.getElementById("san-value").innerText + '</p>'+
@@ -98,12 +99,10 @@ function save_ficha(){
             '<p> Vigor: '+ perAttr[2] +'</p>' +
             '<p> Carisma: '+ perAttr[3] +'</p>' +
         '</div>'+
-        '<div>'+
-            '<h1>Inventário: </h1>'+
-            '<textarea class="form-control" style="background-color: '+ document.body.style.backgroundColor + '; color: ' + document.body.style.color + '; opacity: 3;">'+ document.getElementById("bag_input").value +'</textarea>' +
-            '<h1>História</h1>'+
-            '<textarea class="form-control" style="background-color: '+ document.body.style.backgroundColor + '; color: ' + document.body.style.color + '; opacity: 3;">'+ document.getElementById("history_input").value +'</textarea>' +    
-        '</div>'+
+        '<h1>Inventário: </h1>'+
+        '<textarea class="form-control" style="background-color: '+ document.body.style.backgroundColor + '; color: ' + document.body.style.color + '; opacity: 3; font-size: 1.3em;">'+ document.getElementById("bag_input").value +'</textarea>' +
+        '<h1>História</h1>'+
+        '<textarea class="form-control" style="background-color: '+ document.body.style.backgroundColor + '; color: ' + document.body.style.color + '; opacity: 3; font-size: 1.3em;">'+ document.getElementById("history_input").value +'</textarea>' +    
     '</body>'
 
     // Salva o html
@@ -202,5 +201,3 @@ function changeStats(){
     }
     document.getElementById("san-value").innerText += san_value + " (" + san + ")";
 }
-
-
