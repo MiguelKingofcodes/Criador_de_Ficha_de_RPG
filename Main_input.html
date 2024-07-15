@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,7 @@
 <body>
     <div class="container-fluid mt-3">
         <div class="form-control" id="photo-container">
+            <img src='' id='p_image' width=100% style="display: none;">
             <input class="form-control" type="link" id="photo-input" class="photo-btn" placeholder="Link para foto do personagem">
             <input class="form-control btn btn-primary mt-3" type="button" value="Salvar Imagem" onclick="save_image()">
         </div>
@@ -41,14 +42,14 @@
             <li>
                 <h2 class="text-start">
                     HP: 
-                        <span id="hp-value">//////////// (12)</span>
+                        <span id="hp-value">//////////// (12/12)</span>
                 </h2>
             </li>
 
             <li>
                 <h2 class="text-start">
                     San: 
-                        <span id="san-value">////////// (10)</span>
+                        <span id="san-value">////////// (10/10)</span>
                 </h2>
             </li>
         </ul>
@@ -59,7 +60,7 @@
         <div id="form-group" class="border-top border-5 border-bottom border-5">
             <h2 class="text-center">Atributos</h2> 
             <div class="container-fluid">
-                <h3>Pontos: (<span id="attrPoints">10</span>)</h3>
+                <h3>Pontos: <span id="attrPoints">10</span> restantes...</h3>
             </div>
 
             <div class="container-fluid">
@@ -68,9 +69,9 @@
 
                 <div class="form-control">
                     
-                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('for-input'))" ondblclick="upStats(document.getElementById('for-input'))">
+                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('for-input'))">
                     <input class="form-control input-lg" type="number" id="for-input" value="0" min="0" max="10">
-                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('for-input'))" ondblclick="downStats(document.getElementById('for-input'))">
+                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('for-input'))">
 
                 </div>
 
@@ -81,9 +82,9 @@
 
                 <div class="form-control">
                     
-                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('vig-input'))" ondblclick="upStats(document.getElementById('vig-input'))">
+                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('vig-input'))">
                     <input class="form-control input-lg" type="number" id="vig-input" value="0" min="0" max="10">
-                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('vig-input'))" ondblclick="downStats(document.getElementById('vig-input'))">
+                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('vig-input'))">
 
                 </div>
 
@@ -94,9 +95,9 @@
 
                 <div class="form-control">
                     
-                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('int-input'))" ondblclick="upStats(document.getElementById('int-input'))">
+                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('int-input'))">
                     <input class="form-control input-lg" type="number" id="int-input" value="0" min="0" max="10">
-                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('int-input'))" ondblclick="downStats(document.getElementById('int-input'))">
+                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('int-input'))">
 
                 </div>
 
@@ -107,9 +108,9 @@
                 
                 <div class="form-control">
                     
-                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('car-input'))" ondblclick="upStats(document.getElementById('car-input'))">
+                    <input class="btn btn-success btn-primary container-fluid" type="button" value="+" onclick="upStats(document.getElementById('car-input'))">
                     <input class="form-control input-lg" type="number" id="car-input" value="0" min="0" max="10" >
-                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('car-input'))" ondblclick="downStats(document.getElementById('car-input'))">
+                    <input class="btn btn-danger btn-primary container-fluid" type="button" value="-" onclick="downStats(document.getElementById('car-input'))">
 
                 </div>
                 
